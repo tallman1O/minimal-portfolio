@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { FloatingDock } from "@/components/ui/floating-dock";
-import { NavbarLinks } from "@/lib/data";
 
 
 const geistSans = Geist({
@@ -43,9 +41,6 @@ export default function RootLayout({
             <main className="flex-1">
               {children}
             </main>
-            <div className="flex items-center justify-center w-full pb-4">
-              <FloatingDock items={NavbarLinks} />
-            </div>
           </div>
         </ThemeProvider >
       </body>
