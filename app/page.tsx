@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { AppleHelloEnglishEffect } from "@/components/apple-hello-effect";
 import { FloatingDock } from "@/components/ui/floating-dock";
@@ -9,12 +9,9 @@ import { NavbarLinks } from "@/lib/data";
 const Page = () => {
   const [showContent, setShowContent] = useState(false);
 
-  const handleAnimationComplete = () => {
-    // Wait a bit after animation completes, then show content
-    setTimeout(() => {
-      setShowContent(true);
-    }, 500);
-  };
+  const handleAnimationComplete = useCallback(() => {
+    setShowContent(true);
+  }, [setShowContent]);
 
   return (
     <div className="relative min-h-screen flex items-center justify-center">
@@ -40,7 +37,7 @@ const Page = () => {
             transition={{ duration: 0.5 }}
             className="w-full relative min-h-screen"
           >
-              <div>page</div>
+              <div className="mx-auto md:max-w-3xl *:[[id]]:scroll-mt-22">page</div>
             <div className="fixed bottom-0 left-0 right-0 flex items-center justify-center w-full pb-4 z-50">
               <FloatingDock items={NavbarLinks} />
             </div>
