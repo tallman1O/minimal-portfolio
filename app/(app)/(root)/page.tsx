@@ -1,12 +1,15 @@
 import { Banner } from '@/components/banner'
+import ProfilePicture from '@/components/profile-picture'
+import { Separator } from '@/components/separator'
 import { TechStack } from '@/components/tech-stack'
 import Testimonials from '@/components/testimonials'
-import React from 'react'
+import { GitHubCalendar } from 'react-github-calendar'
 
 const Home = () => {
     return (
-        <div>
+        <div className='mb-24'>
             <Banner />
+            <ProfilePicture />
             <div>Design Engineer with 5+ years of experience, known for pixel-perfect execution and strong attention to small details.
                 Skilled in Next.js, React, TypeScript, and modern front-end technologies; building high-quality, user-centric web and mobile applications.
                 Passionate about exploring new technologies and turning ideas into reality through polished, thoughtfully crafted personal projects.
@@ -17,10 +20,11 @@ const Home = () => {
                 10k+ weekly downloads on npm
                 ▲Vercel OSS Program summer 2025 cohort
             </div>
+            <Separator />
                 <TechStack />
                 <Testimonials />
+                <GitHubCalendar username='tallman1O' year={2026} />
         </div>
-
     )
 }
 

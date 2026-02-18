@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import { Roboto_Mono } from "next/font/google";
+import { Roboto_Mono, Yatra_One } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import dynamic from "next/dynamic"
+import { TooltipProvider } from "@/components/tooltip";
 
 
 const robotoMono = Roboto_Mono({
@@ -9,6 +11,16 @@ const robotoMono = Roboto_Mono({
     subsets: ["latin"],
     weight:  ["400", "500", "700"]
 })
+
+const yatraOne = Yatra_One({
+    variable: "--font-yatra-one",
+    subsets: ["latin"],
+    weight:  ["400"]
+})
+
+const ScrollToTop = dynamic(() =>
+  import("@/components/scroll-to-top").then((mod) => mod.ScrollToTop)
+)
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${robotoMono.variable} antialiased`}
+        className={`${robotoMono.variable} ${yatraOne.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
@@ -33,11 +45,15 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange={false}
         >
+          <TooltipProvider>
+
           <div className="flex flex-col min-h-screen">
             <main className="flex-1">
               {children}
             </main>
+            <ScrollToTop />
           </div>
+          </TooltipProvider>
         </ThemeProvider >
       </body>
     </html>

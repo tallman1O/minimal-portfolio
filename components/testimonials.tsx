@@ -19,7 +19,7 @@ const DATA: TestimonialInterface[] = [
 function Testimonials() {
   return (
     <div className="box relative flex min-h-[400px] items-center justify-center px-3 py-8">
-      <div className="max-w-[450px]">
+      <div className="max-w-3xl">
         <AnimatedBlurTestimonials data={DATA} delayDuration={4} />
       </div>
     </div>

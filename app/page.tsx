@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { AppleHelloEnglishEffect } from "@/components/apple-hello-effect";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { NavbarLinks } from "@/lib/data";
-import Home from "./(app)/home/page";
+import Home from "./(app)/(root)/page";
 
 const Page = () => {
   const [showContent, setShowContent] = useState(false);

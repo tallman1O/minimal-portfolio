@@ -1,4 +1,12 @@
-import Image from "next/image";
+import Image from "next/image"
+
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/tooltip"
+
+import { Panel, PanelContent, PanelHeader, PanelTitle } from "./panel"
 
 type TechStack = {
   name: string;
@@ -20,15 +28,46 @@ const TECH_STACK: TechStack[] = [
   },
 ]
 
-export const TechStack = () => {
+
+
+export function TechStack() {
   return (
-    <div className="flex flex-wrap gap-2">
-      {TECH_STACK.map((tech) => (
-        <div key={tech.name} className="flex items-center gap-2">
-          <Image src={tech.icon} alt={tech.name} width={20} height={20} />
-          {tech.name}
-        </div>
-      ))}
-    </div>
+    <Panel id="stack">
+      <PanelHeader>
+        <PanelTitle>Stack</PanelTitle>
+      </PanelHeader>
+
+      <PanelContent>
+        <ul className="flex flex-wrap gap-4 select-none">
+          {TECH_STACK.map((tech, index) => {
+            return (
+              <li key={index} className="flex">
+                <Tooltip>
+                  <TooltipTrigger
+                    render={
+                      <div
+                      >
+                        
+                          <Image
+                            src={tech.icon}
+                            alt={`${tech.name} icon`}
+                            width={32}
+                            height={32}
+                            unoptimized
+                          />
+                        
+                      </div>
+                    }
+                  />
+                  <TooltipContent>
+                    <p>{tech.name}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </li>
+            )
+          })}
+        </ul>
+      </PanelContent>
+    </Panel>
   )
 }
