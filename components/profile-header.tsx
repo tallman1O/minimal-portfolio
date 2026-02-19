@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const ProfilePicture = () => {
     return (
-        <div className="flex items-baseline">
+        <div className="flex items-baseline screen-line-after border-x border-edge">
             <div className="relative h-40 w-40 rounded-full overflow-hidden">
                 <Image
                     src="/images/mehul.png"

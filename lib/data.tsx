@@ -41,6 +41,5 @@ export const NavbarLinks = [
     icon: (
       <ThemeToggleButton />
     ),
-    href: "#",
   }
 ];

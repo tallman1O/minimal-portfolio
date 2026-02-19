@@ -1,5 +1,5 @@
 import { Banner } from '@/components/banner'
-import ProfilePicture from '@/components/profile-picture'
+import ProfilePicture from '@/components/profile-header'
 import { Separator } from '@/components/separator'
 import { TechStack } from '@/components/tech-stack'
 import Testimonials from '@/components/testimonials'
@@ -22,6 +22,7 @@ const Home = () => {
             </div>
             <Separator />
                 <TechStack />
+                <Separator />
                 <Testimonials />
                 <GitHubCalendar username='tallman1O' year={2026} />
         </div>

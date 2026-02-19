@@ -86,6 +86,8 @@
   --d-fg: hsl(0 0% 0%);
   --d-border: hsl(0 0% 90%);
   --d-sheet: hsl(0 0% 98%);
+  --edge: color-mix(in oklab, var(--border) 64%, var(--background));
+  --color-edge: var(--edge);
 }
 
 .dark {
