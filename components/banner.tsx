@@ -1,9 +1,13 @@
 "use client";
 import { DitherShader } from "@/components/ui/dither-shader";
+import { cn } from "@/lib/utils";
 
 export function Banner() {
   return (
-    <div className="flex flex-col items-center gap-8 p-8">
+    <div className={cn(
+      "flex flex-col items-center gap-8 p-8",
+      "creen-line-before screen-line-after before:-top-px after:-bottom-px"
+    )}>
       <div className="relative overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-800">
         <DitherShader
           src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=2670&auto=format&fit=crop"
