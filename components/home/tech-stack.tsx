@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/tooltip";
 
-import { Panel, PanelContent, PanelHeader, PanelTitle } from "./panel";
+import { Panel, PanelContent, PanelHeader, PanelTitle } from "../panel";
 
 type TechStack = {
   name: string;

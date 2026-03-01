@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { WordRotate } from "./ui/word-rotate"
+import { WordRotate } from "../ui/word-rotate"
 import { USER } from "@/data/user"
 
 export function ProfileHeader() {
