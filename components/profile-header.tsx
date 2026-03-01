@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { MorphingText } from "./ui/morphing-text"
+import { WordRotate } from "./ui/word-rotate"
 import { USER } from "@/data/user"
 
 export function ProfileHeader() {
@@ -19,12 +19,12 @@ export function ProfileHeader() {
             </div>
 
             {/* Right column — name + role (flex-1 so border-t spans full width) */}
-            <div className="flex flex-1 min-w-0 flex-col mb-6 justify-start border-t border-edge">
+            <div className="flex flex-1 min-w-0 flex-col py-2 justify-start border-t border-edge">
                 <h1 className="text-3xl ml-4 font-medium font-yatra-one text-zinc-950 dark:text-zinc-50">
                     {USER.displayName}
                 </h1>
-                <div className="flex-1 border-t border-edge">
-                    <MorphingText texts={USER.morphingText} className="text-sm ml-4" />
+                <div className="flex-1 border-t border-edge pt-2">
+                    <WordRotate words={USER.morphingText} className="text-sm ml-4" />
                 </div>
             </div>
         </div>
