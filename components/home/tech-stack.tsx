@@ -6,23 +6,43 @@ import { Panel, PanelContent, PanelHeader, PanelTitle } from "../panel";
 
 type TechStack = {
   name: string;
-  icon: string;
+  key: string;
 };
 
 const TECH_STACK: TechStack[] = [
   {
-    name: "React",
-    icon: "/icons/react.svg",
-  },
-  {
-    name: "Next.js",
-    icon: "/icons/nextjs.svg",
+    name: "JavaScript",
+    key: "javascript",
   },
   {
     name: "TypeScript",
-    icon: "/icons/typescript.svg",
+    key: "typescript",
   },
-];
+  {
+    name: "React",
+    key: "react",
+  },
+  {
+    name: "Next.js",
+    key: "nextjs",
+  },
+  {
+    name: "Zustand",
+    key: "zustand",
+  },
+  {
+    name: "Tailwind CSS",
+    key: "tailwindcss",
+  },
+  {
+    name: "Expo",
+    key: "expo",
+  },
+  {
+    name: "Bun",
+    key: "bun",
+  },
+]
 
 export function TechStack() {
   return (
@@ -41,7 +61,7 @@ export function TechStack() {
                     render={
                       <div>
                         <Image
-                          src={tech.icon}
+                          src={`/icons/${tech.key}.svg`}
                           alt={`${tech.name} icon`}
                           width={40}
                           height={40}

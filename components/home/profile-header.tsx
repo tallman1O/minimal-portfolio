@@ -20,7 +20,7 @@ export function ProfileHeader() {
 
             {/* Right column — name + role (flex-1 so border-t spans full width) */}
             <div className="flex flex-1 min-w-0 flex-col py-2 justify-start border-t border-edge">
-                <h1 className="text-3xl ml-4 font-medium font-yatra-one text-zinc-950 dark:text-zinc-50">
+                <h1 className="text-3xl ml-4 font-medium font-google-sans text-zinc-950 dark:text-zinc-50">
                     {USER.displayName}
                 </h1>
                 <div className="flex-1 border-t border-edge pt-2">

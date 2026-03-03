@@ -17,7 +17,7 @@ const Page = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center">
       <AnimatePresence mode="wait">
-        {showContent ? (
+        {!showContent ? (
           <motion.div
             key="hello"
             initial={{ opacity: 1 }}

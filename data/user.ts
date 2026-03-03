@@ -8,7 +8,7 @@ export const USER = {
   gender: "male",
   pronouns: "he/him",
   bio: "Creating with code. Small details matter. ",
-  morphingText: ["UI Engineer", "UX Craftsman", "Builder"],
+  morphingText: ["Software Engineer", "UI Engineer", "UX Craftsman", "Builder"],
   address: "Pune, Maharashtra",
   email: "mehulsavio@gmail.com", // base64 encoded
   website: "https://mehul.codes",

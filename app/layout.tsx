@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto_Mono, Yatra_One } from "next/font/google";
+import { Google_Sans_Code, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import Provider from "@/providers/provider";
 
@@ -9,10 +9,10 @@ const robotoMono = Roboto_Mono({
   weight: ["400", "500", "700"],
 });
 
-const yatraOne = Yatra_One({
-  variable: "--font-yatra-one",
+const googleSans = Google_Sans_Code({
+  variable: "--font-google-sans",
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${robotoMono.variable} ${yatraOne.variable} antialiased`}
+        className={`${robotoMono.variable} ${googleSans.variable} antialiased`}
       >
         <div className="flex flex-col min-h-screen">
           <Provider>{children}</Provider>
