@@ -6,11 +6,13 @@ import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { useWebHaptics } from "web-haptics/react"
 
 export function ScrollToTop({
   className,
   ...props
 }: React.ComponentProps<"button">) {
+  const {trigger} = useWebHaptics()
   const { scrollY } = useScroll()
 
   const [visible, setVisible] = useState(false)
@@ -23,6 +25,14 @@ export function ScrollToTop({
     const diff = latestValue - prev
     setScrollDirection(diff > 0 ? "down" : "up")
   })
+
+  const handleOnClick = () => {
+    trigger([
+      { duration: 80, intensity: 0.8 },
+      { delay: 80, duration: 50, intensity: 0.3 },
+    ])
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
 
   return (
     <Button
@@ -37,11 +47,11 @@ export function ScrollToTop({
       )}
       variant="secondary"
       size="icon-lg"
-      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      onClick={handleOnClick}
       {...props}
     >
       <ArrowUpIcon className="size-5" />
       <span className="sr-only">Scroll to top</span>
     </Button>
-  )
+  );
 }
