@@ -6,12 +6,11 @@ export function Banner() {
   return (
     <div className={cn(
       "flex flex-col items-center gap-8 p-8",
-      "creen-line-before screen-line-after before:-top-px after:-bottom-px"
+      "screen-line-before screen-line-after before:-top-px after:-bottom-px"
     )}>
       <div className="relative overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-800">
         <DitherShader
-          src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=2670&auto=format&fit=crop"
-          gridSize={2}
+          src="https://plus.unsplash.com/premium_photo-1661964177687-57387c2cbd14?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           ditherMode="bayer"
           colorMode="original"
           invert={false}

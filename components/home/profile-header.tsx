@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { WordRotate } from "../ui/word-rotate"
+
 import { USER } from "@/data/user"
 
 export function ProfileHeader() {
@@ -23,8 +23,22 @@ export function ProfileHeader() {
                 <h1 className="text-3xl ml-4 font-medium font-google-sans text-zinc-950 dark:text-zinc-50">
                     {USER.displayName}
                 </h1>
-                <div className="flex-1 border-t border-edge pt-2">
-                    <WordRotate words={USER.morphingText} className="text-sm ml-4" />
+                <div className="w-full border-t border-edge px-4 pt-3">
+                  <p className="flex flex-wrap items-center gap-x-0 gap-y-1 text-xs leading-relaxed text-muted-foreground">
+                    {USER.morphingText.map((label, index) => (
+                      <span key={label} className="inline-flex items-center">
+                        {index > 0 ? (
+                          <span
+                            className="mx-2 select-none text-accent-foreground"
+                            aria-hidden
+                          >
+                            ⌗
+                          </span>
+                        ) : null}
+                        <span>{label}</span>
+                      </span>
+                    ))}
+                  </p>
                 </div>
             </div>
         </div>
