@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import { Panel, PanelContent } from "../panel";
+import { Panel, PanelContent } from "../components/panel";
 
 const GitHubCalendar = dynamic(
   () => import("react-github-calendar").then((mod) => mod.GitHubCalendar),

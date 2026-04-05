@@ -1,4 +1,4 @@
-import WorkExperience from '@/components/features/work-experience'
+import WorkExperience from '@/features/work-experience'
 
 const Work = () => {
   return (

@@ -1,5 +1,5 @@
 import { Panel, PanelContent, PanelHeader, PanelTitle } from "@/components/panel";
-import { Highlighter } from "../ui/highlighter";
+import { Highlighter } from "../components/ui/highlighter";
 
 
 export function About() {
