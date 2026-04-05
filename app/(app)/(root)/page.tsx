@@ -1,12 +1,12 @@
-import About from "@/components/home/about";
-import { Banner } from "@/components/home/banner";
-import GithubGraph from "@/components/home/github-graph";
-import ProfilePicture from "@/components/home/profile-header";
+import About from "@/components/features/about";
+import { Banner } from "@/components/features/banner";
+import GithubGraph from "@/components/features/github-graph";
+import ProfilePicture from "@/components/features/profile-header";
 import { Separator } from "@/components/separator";
-import { TechStack } from "@/components/home/tech-stack";
-import Testimonials from "@/components/home/testimonials";
-import WorkExperience from "@/components/home/work-experience";
-import Projects from "@/components/home/projects";
+import { TechStack } from "@/components/features/tech-stack";
+import Testimonials from "@/components/features/testimonials";
+import WorkExperience from "@/components/features/work-experience";
+import Projects from "@/components/features/projects";
 
 
 const Home = () => {
