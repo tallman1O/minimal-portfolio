@@ -48,7 +48,7 @@ export function TechStack() {
   return (
     <Panel id="stack">
       <PanelHeader>
-        <PanelTitle>My Tech Stack</PanelTitle>
+        <PanelTitle>Tech Stack.</PanelTitle>
       </PanelHeader>
 
       <PanelContent>
@@ -61,7 +61,7 @@ export function TechStack() {
                     render={
                       <div>
                         <Image
-                          src={`/icons/${tech.key}.svg`}
+                          src={`/icons/tech-stack/${tech.key}.svg`}
                           alt={`${tech.name} icon`}
                           width={40}
                           height={40}

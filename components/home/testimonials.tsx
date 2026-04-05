@@ -21,7 +21,7 @@ function Testimonials() {
   return (
     <Panel id="testimonials">
       <PanelHeader>
-        <PanelTitle>Testimonials</PanelTitle>
+        <PanelTitle>Testimonials.</PanelTitle>
       </PanelHeader>
       <PanelContent>
         <div className="relative flex items-center justify-center">

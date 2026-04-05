@@ -1,0 +1,190 @@
+import Image from "next/image";
+import { ArrowUpRight, Github, Globe } from "lucide-react";
+
+import { Panel, PanelContent, PanelHeader, PanelTitle } from "@/components/panel";
+import { cn } from "@/lib/utils";
+
+type ProjectsInterface = {
+  id: string;
+  src: string;
+  project_name: string;
+  date_range: string;
+  description: string;
+  /** Substring in description to render underlined (e.g. product name) */
+  descriptionUnderline?: string;
+  tech_stack: string[];
+  live_link?: string;
+  github_link?: string;
+  /** Thin accent line under the preview (matches reference) */
+  imageAccentLine?: boolean;
+};
+
+const DATA: ProjectsInterface[] = [
+  {
+    id: "prepmate",
+    src: "/images/projects/prepmate.png",
+    project_name: "PrepMate",
+    date_range: "Jan 2024 – Feb 2024",
+    description:
+      "A platform for students to find study partners and resources. Built with a focus on clarity and performance.",
+    descriptionUnderline: "study partners",
+    tech_stack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "Docker",
+    ],
+    live_link: "https://prepmate.com",
+    github_link: "https://github.com/prepmate",
+    imageAccentLine: true,
+  },
+  {
+    id: "portfolio",
+    src: "/vercel.svg",
+    project_name: "Portfolio",
+    date_range: "Oct 2025 – Present",
+    description:
+      "Personal site with animated sections, theme toggle, and a minimal panel layout.",
+    tech_stack: ["Next.js", "TypeScript", "Tailwind CSS", "Motion"],
+    live_link: "https://vercel.com",
+    github_link: "https://github.com",
+    imageAccentLine: false,
+  },
+];
+
+function DescriptionWithUnderline({
+  text,
+  underline,
+}: {
+  text: string;
+  underline?: string;
+}) {
+  if (!underline || !text.includes(underline)) {
+    return (
+      <p className="text-sm leading-relaxed text-muted-foreground">{text}</p>
+    );
+  }
+  const [before, ...rest] = text.split(underline);
+  const after = rest.join(underline);
+  return (
+    <p className="text-sm leading-relaxed text-muted-foreground">
+      {before}
+      <span className="underline decoration-foreground/40 underline-offset-2">
+        {underline}
+      </span>
+      {after}
+    </p>
+  );
+}
+
+function ProjectCard({ project }: { project: ProjectsInterface }) {
+  return (
+    <article
+      className={cn(
+        "flex flex-col overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950",
+        "shadow-sm dark:border-zinc-800 dark:bg-zinc-950",
+      )}
+    >
+      {/* Preview — light area */}
+      <div className="relative aspect-16/10 bg-white">
+        <Image
+          src={project.src}
+          alt={`${project.project_name} preview`}
+          fill
+          className="object-cover object-top"
+          sizes="(max-width: 768px) 100vw, 50vw"
+          unoptimized
+        />
+        <div className="absolute right-3 top-3 z-10 flex flex-wrap justify-end gap-2">
+          {project.live_link ? (
+            <a
+              href={project.live_link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full bg-black px-3 py-1.5 text-xs font-medium text-white transition-opacity hover:opacity-90"
+            >
+              <Globe className="size-3.5 shrink-0" aria-hidden />
+              Website
+            </a>
+          ) : null}
+          {project.github_link ? (
+            <a
+              href={project.github_link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full bg-black px-3 py-1.5 text-xs font-medium text-white transition-opacity hover:opacity-90"
+            >
+              <Github className="size-3.5 shrink-0" aria-hidden />
+              Source
+            </a>
+          ) : null}
+        </div>
+        {project.imageAccentLine ? (
+          <div
+            className="absolute bottom-0 left-0 right-0 h-px bg-red-500"
+            aria-hidden
+          />
+        ) : null}
+      </div>
+
+      {/* Content — dark block */}
+      <div className="flex flex-1 flex-col gap-3 border-t border-zinc-800 bg-zinc-950 p-5 dark:bg-zinc-950">
+        <div className="flex items-start justify-between gap-3">
+          <h3 className="text-lg font-semibold tracking-tight text-white">
+            {project.project_name}
+          </h3>
+          {(project.live_link ?? project.github_link) ? (
+            <a
+              href={project.live_link ?? project.github_link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 text-zinc-400 transition-colors hover:text-white"
+              aria-label={`Open ${project.project_name}`}
+            >
+              <ArrowUpRight className="size-5" />
+            </a>
+          ) : null}
+        </div>
+        <p className="text-xs text-zinc-500">{project.date_range}</p>
+        <DescriptionWithUnderline
+          text={project.description}
+          underline={project.descriptionUnderline}
+        />
+        <ul className="flex flex-wrap gap-2 pt-1">
+          {project.tech_stack.map((tag) => (
+            <li key={tag}>
+              <span
+                className={cn(
+                  "inline-block rounded-full border border-zinc-700 bg-black px-2.5 py-1",
+                  "text-xs font-medium text-zinc-100",
+                )}
+              >
+                {tag}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </article>
+  );
+}
+
+function Projects() {
+  return (
+    <Panel id="projects">
+      <PanelHeader>
+        <PanelTitle>Projects.</PanelTitle>
+      </PanelHeader>
+      <PanelContent className="px-0 py-6">
+        <div className="grid gap-6 px-4 md:grid-cols-2">
+          {DATA.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+      </PanelContent>
+    </Panel>
+  );
+}
+
+export default Projects;

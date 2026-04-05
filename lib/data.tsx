@@ -5,7 +5,7 @@ import {
   IconBrandX,
   IconFileCv,
   IconHome,
-  IconTerminal2,
+  IconBriefcase,
 } from "@tabler/icons-react";
 import { LINKEDIN_URL, GITHUB_URL, X_URL } from "@/env";
 
@@ -18,11 +18,11 @@ export const NavbarLinks = [
     href: "/",
   },
   {
-    title: "Products",
+    title: "Work Experience",
     icon: (
-      <IconTerminal2 />
+      <IconBriefcase />
     ),
-    href: "#",
+    href: "#work-experience",
   },
   {
     title: "LinkedIn",
