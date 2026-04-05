@@ -33,7 +33,7 @@ export function Highlighter({
   color = "#ffd1dc",
   strokeWidth = 1.5,
   animationDuration = 600,
-  iterations = 2,
+  iterations = 1,
   padding = 2,
   multiline = true,
   isView = false,
@@ -51,7 +51,6 @@ export function Highlighter({
   useLayoutEffect(() => {
     const element = elementRef.current
     let annotation: RoughAnnotation | null = null
-    let resizeObserver: ResizeObserver | null = null
 
     if (shouldShow && element) {
       const annotationConfig = {
@@ -66,22 +65,12 @@ export function Highlighter({
 
       const currentAnnotation = annotate(element, annotationConfig)
       annotation = currentAnnotation
+      // Single play: iterations defaults to 1; no hide/show on resize (that replayed the animation)
       currentAnnotation.show()
-
-      resizeObserver = new ResizeObserver(() => {
-        currentAnnotation.hide()
-        currentAnnotation.show()
-      })
-
-      resizeObserver.observe(element)
-      resizeObserver.observe(document.body)
     }
 
     return () => {
       annotation?.remove()
-      if (resizeObserver) {
-        resizeObserver.disconnect()
-      }
     }
   }, [
     shouldShow,
