@@ -109,7 +109,7 @@ function ProjectCard({ project }: { project: ProjectsInterface }) {
             <li key={tag}>
               <span
                 className={cn(
-                  "inline-block rounded-full border border-zinc-700 bg-black px-2.5 py-1",
+                  "inline-block rounded-full border-2 border-dashed border-edge bg-muted/30 px-2.5 py-1",
                   "text-xs font-medium text-zinc-100",
                 )}
               >
