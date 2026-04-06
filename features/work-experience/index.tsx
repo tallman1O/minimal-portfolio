@@ -3,90 +3,14 @@
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { useRef, useState } from "react";
-
 import { Panel, PanelContent, PanelHeader, PanelTitle } from "@/components/ui/panel";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
-import { Button } from "@/components/ui/common/button";
 import DownChevron from "@/components/icons/down-chevron";
 import { WebHaptics } from "web-haptics";
 import { TECH_STACK_MAP } from "@/lib/config";
+import { DATA, WorkMode } from "./config";
 
-type WorkMode = "on-site" | "remote";
-
-type WorkExperienceInterface = {
-  id: string;
-  company_name: string;
-  role: string;
-  role_type?: string;
-  start_date: string;
-  end_date: string;
-  description?: string;
-  tech_stack?: string[];
-  location: string;
-  workMode: WorkMode;
-  /** Shows “Working” badge (e.g. current role) */
-  isCurrent?: boolean;
-  achievements: string[];
-};
-
-const DATA: WorkExperienceInterface[] = [
-  {
-    id: "kiddenz",
-    company_name: "Kiddenz",
-    role: "Software Engineer Intern (Full Stack)",
-    role_type: "Internship",
-    start_date: "July 2025",
-    end_date: "December 2025",
-    description:
-      "UI Engineer at Kiddenz — design and development of the Kiddenz website.",
-    tech_stack: [
-      "React",
-      "Next.js",
-      "JavaScript",
-      "Tailwind CSS",
-      "Python",
-      "Django",
-      "Docker",
-      "Gitlab"
-    ],
-    location: "Pune, Maharashtra",
-    workMode: "on-site",
-    achievements: [
-      "Built responsive, reusable UI components that improved development speed across the product.",
-      "Integrated backend APIs and improved frontend data-fetching reliability.",
-      "Collaborated with design/product to deliver polished UX improvements across key flows.",
-    ],
-  },
-  {
-    id: "repos",
-    company_name: "Repos Energy",
-    role: "Associate Software Engineer Intern (UI Engineer)",
-    role_type: "Internship",
-    start_date: "January 2025",
-    end_date: "Present",
-    description:
-      "Associate Software Engineer Intern at Repos Energy — design and development of the Repos Energy website.",
-    tech_stack: [
-      "Next.js",
-      "Tailwind CSS",
-      "TypeScript",
-      "React",
-      "JavaScript",
-    ],
-    location: "Pune, Maharashtra",
-    workMode: "on-site",
-    isCurrent: true,
-    achievements: [
-      "Architected and developed core frontend infrastructure for promotional campaign workflows.",
-      "Refactored large parts of the codebase, improving maintainability and delivery velocity.",
-      "Improved backend API integrations with better error handling and data-fetching patterns.",
-      "Raised UX quality with stronger design system consistency and accessibility improvements.",
-    ],
-  },
-];
-
-function formatDateRange(start: string, end: string) {
+export function formatDateRange(start: string, end: string) {
   return `${start} – ${end}`;
 }
 
@@ -197,7 +121,7 @@ function WorkExperience() {
                           {(job.tech_stack ?? []).map((tech) => (
                             <span
                               key={`${job.id}-${tech}`}
-                              className="inline-flex size-11 items-center justify-center rounded-xl border border-edge bg-muted/30 p-2"
+                              className="inline-flex size-11 items-center justify-center rounded-xl border-2 border-dashed border-edge bg-muted/30 p-2"
                               title={tech}
                             >
                               {TECH_STACK_MAP[tech] ? (
@@ -235,7 +159,7 @@ function WorkExperience() {
             );
           })}
         </ul>
-        <div className="mt-2 flex justify-center px-4 pt-4">
+        {/* <div className="mt-2 flex justify-center px-4 pt-4">
           <Link href="/work">
             <Button
               variant="outline"
@@ -244,7 +168,7 @@ function WorkExperience() {
               Show all work experiences
             </Button>
           </Link>
-        </div>
+        </div> */}
       </PanelContent>
     </Panel>
   );

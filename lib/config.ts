@@ -19,5 +19,6 @@ export const TECH_STACK_MAP: Record<string, string> = {
     Docker: "/icons/tech-stack/docker.svg",
     Gitlab: "/icons/tech-stack/gitlab.svg",
     Figma: "/icons/tech-stack/figma.svg",
+    Jira: "/icons/tech-stack/jira.svg",
     Claude: "/icons/tech-stack/claude.svg"
   };

@@ -6,7 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import { TechStack } from "@/features/tech-stack";
 import Testimonials from "@/features/testimonials";
 import WorkExperience from "@/features/work-experience";
-import Projects from "@/features/projects";
+import Projects from "@/features/projects/index";
 
 
 const Home = () => {
