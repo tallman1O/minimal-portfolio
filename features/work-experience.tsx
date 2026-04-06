@@ -97,7 +97,7 @@ function WorkingBadge() {
   return (
     <span className="inline-flex items-center gap-1.5 rounded-md border border-emerald-500/30 bg-emerald-950/80 px-2 py-0.5 text-xs font-medium text-white dark:bg-emerald-950/90">
       <span
-        className="size-1.5 shrink-0 rounded-full bg-emerald-400"
+        className="size-1.5 shrink-0 rounded-full animate-pulse bg-emerald-400"
         aria-hidden
       />
       Working

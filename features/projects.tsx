@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { ArrowUpRight, Github, Globe } from "lucide-react";
-
+import { ArrowUpRight, Github, Globe, ExternalLink, GithubIcon } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import { Panel, PanelContent, PanelHeader, PanelTitle } from "@/components/panel";
 import { cn } from "@/lib/utils";
 
@@ -177,11 +178,32 @@ function Projects() {
         <PanelTitle>Projects.</PanelTitle>
       </PanelHeader>
       <PanelContent className="px-0 py-6">
-        <div className="grid gap-6 px-4 md:grid-cols-2">
-          {DATA.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
+        <>
+          <div className="grid gap-6 px-4 md:grid-cols-2">
+            {DATA.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+          <div className="mt-2 flex justify-center px-4 pt-4">
+            <Link
+              href="https://github.com/tallman1O"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="outline"
+                size="sm"
+                className="group overflow-hidden border-edge bg-background/70 transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:bg-muted/60 hover:shadow-[0_0_30px_-16px_rgba(255,255,255,0.45)] active:translate-y-0 active:scale-[0.99]"
+              >
+                <span className="inline-flex items-center gap-2">
+                  <span>Checkout more on</span>
+                  <GithubIcon className="size-4 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110" />
+                  <ExternalLink className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </span>
+              </Button>
+            </Link>
+          </div>
+        </>
       </PanelContent>
     </Panel>
   );
