@@ -1,8 +1,16 @@
+"use client"
+
 import Image from "next/image";
+import { AnimatePresence, motion } from "motion/react";
+import { useRef, useState } from "react";
 
 import { Panel, PanelContent, PanelHeader, PanelTitle } from "@/components/panel";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import DownChevron from "@/components/icons/down-chevron";
+import { WebHaptics } from "web-haptics";
+import { TECH_STACK_MAP } from "@/lib/config";
 
 type WorkMode = "on-site" | "remote";
 
@@ -19,7 +27,7 @@ type WorkExperienceInterface = {
   workMode: WorkMode;
   /** Shows “Working” badge (e.g. current role) */
   isCurrent?: boolean;
-
+  achievements: string[];
 };
 
 const DATA: WorkExperienceInterface[] = [
@@ -37,13 +45,16 @@ const DATA: WorkExperienceInterface[] = [
       "Next.js",
       "TypeScript",
       "Tailwind CSS",
-      "Python",
-      "Django",
-      "PostgreSQL",
-      "Docker",
+      "JavaScript",
+      "Expo",
     ],
     location: "Pune, Maharashtra",
     workMode: "on-site",
+    achievements: [
+      "Built responsive, reusable UI components that improved development speed across the product.",
+      "Integrated backend APIs and improved frontend data-fetching reliability.",
+      "Collaborated with design/product to deliver polished UX improvements across key flows.",
+    ],
   },
   {
     id: "repos",
@@ -54,9 +65,22 @@ const DATA: WorkExperienceInterface[] = [
     end_date: "Present",
     description:
       "Associate Software Engineer Intern at Repos Energy — design and development of the Repos Energy website.",
+    tech_stack: [
+      "Next.js",
+      "Tailwind CSS",
+      "TypeScript",
+      "React",
+      "JavaScript",
+    ],
     location: "Pune, Maharashtra",
     workMode: "on-site",
     isCurrent: true,
+    achievements: [
+      "Architected and developed core frontend infrastructure for promotional campaign workflows.",
+      "Refactored large parts of the codebase, improving maintainability and delivery velocity.",
+      "Improved backend API integrations with better error handling and data-fetching patterns.",
+      "Raised UX quality with stronger design system consistency and accessibility improvements.",
+    ],
   },
 ];
 
@@ -82,6 +106,14 @@ function WorkingBadge() {
 }
 
 function WorkExperience() {
+  const orderedJobs = [...DATA].reverse();
+  const [openId, setOpenId] = useState<string>(orderedJobs[0]?.id ?? "");
+
+  const hapticsRef = useRef<WebHaptics | null>(null);
+  if (!hapticsRef.current) {
+    hapticsRef.current = new WebHaptics({ debug: true });
+  }
+
   return (
     <Panel id="work-experience">
       <PanelHeader>
@@ -89,57 +121,126 @@ function WorkExperience() {
       </PanelHeader>
       <PanelContent className="px-0 pb-6 pt-0">
         <ul className="divide-y divide-edge">
-          {[...DATA].reverse().map((job) => (
-            <li
-              key={job.id}
-              className="flex flex-col gap-4 px-4 py-6 sm:flex-row sm:items-start sm:justify-between sm:gap-8"
-            >
-              <div className="min-w-0 flex-1 space-y-1">
-                <div className="flex flex-wrap items-center gap-2">
-                  <div
-                    className={cn(
-                      "relative flex size-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-muted ring-1 ring-border",
-                    )}
-                  >
-                      <Image
-                        src={`/icons/work/${job.id}.jpg`}
-                        alt={`${job.company_name} icon`}
-                        width={32}
-                        height={32}
-                        className="size-full object-contain"
-                        unoptimized
-                      />
+          {orderedJobs.map((job) => {
+            const isOpen = openId === job.id;
+            return (
+              <li key={job.id} className="px-4 py-6">
+                <button
+                  type="button"
+                  onClick={() => {
+                    hapticsRef.current?.trigger([
+                      { duration: 25 },
+                    ], { intensity: 0.7 })  
+                    setOpenId((current) => (current === job.id ? "" : job.id))
+                  }}
+                  className="w-full text-left"
+                >
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
+                    <div className="min-w-0 flex-1 space-y-1">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <div
+                          className={cn(
+                            "relative flex size-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-muted ring-1 ring-border",
+                          )}
+                        >
+                          <Image
+                            src={`/icons/work/${job.id}.jpg`}
+                            alt={`${job.company_name} icon`}
+                            width={32}
+                            height={32}
+                            className="size-full object-contain"
+                          />
+                        </div>
+                        <span className="text-lg font-semibold tracking-tight text-foreground">
+                          {job.company_name}
+                        </span>
+                        {job.isCurrent ? <WorkingBadge /> : null}
+                        <motion.span
+                          animate={{ rotate: isOpen ? 180 : 0 }}
+                          transition={{ duration: 0.22, ease: "easeOut" }}
+                          className="inline-flex items-center"
+                          aria-hidden
+                        >
+                          <DownChevron className="size-5 text-muted-foreground" />
+                        </motion.span>
+                      </div>
+                      <p className="text-sm text-muted-foreground">{job.role}</p>
+                    </div>
+                    <div className="shrink-0 space-y-1 text-left sm:text-right">
+                      <p className="text-sm text-muted-foreground">
+                        {formatDateRange(job.start_date, job.end_date)}
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        {formatLocationLine(job.location, job.workMode)}
+                      </p>
+                    </div>
                   </div>
-                  <span
-                    className={cn(
-                      "text-lg font-semibold tracking-tight text-foreground",
-                    )}
-                  >
-                    {job.company_name}
-                  </span>
-                  {job.isCurrent ? <WorkingBadge /> : null}
-                </div>
-                <p className="text-sm text-muted-foreground">{job.role}</p>
-              </div>
-              <div className="shrink-0 space-y-1 text-left sm:text-right">
-                <p className="text-sm text-muted-foreground">
-                  {formatDateRange(job.start_date, job.end_date)}
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  {formatLocationLine(job.location, job.workMode)}
-                </p>
-              </div>
-            </li>
-          ))}
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen ? (
+                    <motion.div
+                      key={`${job.id}-content`}
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="mt-5 border-t border-edge pt-6">
+                        <h4 className="text-sm font-semibold text-foreground">
+                          Tools of the Trade
+                        </h4>
+                        <div className="mt-4 flex flex-wrap gap-2">
+                          {(job.tech_stack ?? []).map((tech) => (
+                            <span
+                              key={`${job.id}-${tech}`}
+                              className="inline-flex size-11 items-center justify-center rounded-xl border border-edge bg-muted/30 p-2"
+                              title={tech}
+                            >
+                              {TECH_STACK_MAP[tech] ? (
+                                <Image
+                                  src={TECH_STACK_MAP[tech]}
+                                  alt={`${tech} logo`}
+                                  width={24}
+                                  height={24}
+                                  className="size-6 object-contain"
+                                />
+                              ) : (
+                                <span className="text-[10px] font-medium text-muted-foreground">
+                                  {tech.slice(0, 3).toUpperCase()}
+                                </span>
+                              )}
+                            </span>
+                          ))}
+                        </div>
+
+                        <h4 className="mt-8 text-sm font-semibold text-foreground">
+                          Battles Won 
+                        </h4>
+                        <ul className="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+                          {job.achievements.map((item) => (
+                            <li key={item} className="text-sm leading-7">
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </motion.div>
+                  ) : null}
+                </AnimatePresence>
+              </li>
+            );
+          })}
         </ul>
         <div className="mt-2 flex justify-center px-4 pt-4">
           <Link href="/work">
-            <button
-              type="button"
-              className="rounded-lg border border-edge bg-transparent px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted/50"
+            <Button
+              variant="outline"
+              size="sm"
             >
               Show all work experiences
-            </button>
+            </Button>
           </Link>
         </div>
       </PanelContent>

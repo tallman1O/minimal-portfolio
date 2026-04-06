@@ -22,7 +22,7 @@ type ProjectsInterface = {
 const DATA: ProjectsInterface[] = [
   {
     id: "prepmate",
-    src: "/images/projects/prepmate.png",
+    src: "/vercel.svg",
     project_name: "PrepMate",
     date_range: "Jan 2024 – Feb 2024",
     description:

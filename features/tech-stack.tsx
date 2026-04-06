@@ -3,46 +3,8 @@ import Image from "next/image";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/tooltip";
 
 import { Panel, PanelContent, PanelHeader, PanelTitle } from "../components/panel";
+import { TECH_STACK_MAP } from "@/lib/config";
 
-type TechStack = {
-  name: string;
-  key: string;
-};
-
-const TECH_STACK: TechStack[] = [
-  {
-    name: "JavaScript",
-    key: "javascript",
-  },
-  {
-    name: "TypeScript",
-    key: "typescript",
-  },
-  {
-    name: "React",
-    key: "react",
-  },
-  {
-    name: "Next.js",
-    key: "nextjs",
-  },
-  {
-    name: "Zustand",
-    key: "zustand",
-  },
-  {
-    name: "Tailwind CSS",
-    key: "tailwindcss",
-  },
-  {
-    name: "Expo",
-    key: "expo",
-  },
-  {
-    name: "Bun",
-    key: "bun",
-  },
-]
 
 export function TechStack() {
   return (
@@ -53,7 +15,7 @@ export function TechStack() {
 
       <PanelContent>
         <ul className="flex flex-wrap gap-4 select-none">
-          {TECH_STACK.map((tech, index) => {
+          {Object.entries(TECH_STACK_MAP).map(([key, value], index) => {
             return (
               <li key={index} className="flex">
                 <Tooltip>
@@ -61,8 +23,8 @@ export function TechStack() {
                     render={
                       <div>
                         <Image
-                          src={`/icons/tech-stack/${tech.key}.svg`}
-                          alt={`${tech.name} icon`}
+                          src={value}
+                          alt={`${key} icon`}
                           width={40}
                           height={40}
                           unoptimized
@@ -71,7 +33,7 @@ export function TechStack() {
                     }
                   />
                   <TooltipContent>
-                    <p>{tech.name}</p>
+                    <p>{key}</p>
                   </TooltipContent>
                 </Tooltip>
               </li>

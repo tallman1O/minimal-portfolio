@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { AppleHelloEnglishEffect } from "@/components/apple-hello-effect";
 import { FloatingDock } from "@/components/ui/floating-dock";
@@ -14,12 +14,21 @@ const Page = () => {
     setShowContent(true);
   }, []);
 
+  useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = showContent ? originalOverflow : "hidden";
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [showContent]);
+
   return (
     <div className="relative min-h-screen">
       {/* Mount Home on first paint so chunks, images, and data load under the overlay */}
       <motion.div
         className="relative w-full min-h-screen"
-        initial={false}
+        initial={{ opacity: 0, y: 12 }}
         animate={{
           opacity: showContent ? 1 : 0,
           y: showContent ? 0 : 12,

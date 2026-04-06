@@ -12,6 +12,7 @@ export function ProfileHeader() {
                         src={USER.avatar}
                         alt="Profile Picture"
                         fill
+                        sizes="(max-width: 640px) 120px, 144px"
                         fetchPriority="high"
                         className="rounded-full ring-1 ring-border ring-offset-2 ring-offset-background select-none object-cover"
                     />
