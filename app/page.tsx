@@ -2,8 +2,8 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { AppleHelloEnglishEffect } from "@/components/apple-hello-effect";
-import { FloatingDock } from "@/components/ui/floating-dock";
+import { AppleHelloEnglishEffect } from "@/components/ui/apple-hello-effect";
+import { FloatingDock } from "@/components/ui/common/floating-dock";
 import { NavbarLinks } from "@/lib/data";
 import Home from "./(app)/(root)/page";
 

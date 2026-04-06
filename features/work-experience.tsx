@@ -4,10 +4,10 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { useRef, useState } from "react";
 
-import { Panel, PanelContent, PanelHeader, PanelTitle } from "@/components/panel";
+import { Panel, PanelContent, PanelHeader, PanelTitle } from "@/components/ui/panel";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/common/button";
 import DownChevron from "@/components/icons/down-chevron";
 import { WebHaptics } from "web-haptics";
 import { TECH_STACK_MAP } from "@/lib/config";

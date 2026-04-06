@@ -4,7 +4,7 @@ import { ArrowUpIcon } from "lucide-react";
 import { useMotionValueEvent, useScroll } from "motion/react";
 import { useState } from "react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/common/button";
 import { cn } from "@/lib/utils";
 import { useWebHaptics } from "web-haptics/react";
 

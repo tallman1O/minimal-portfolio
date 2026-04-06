@@ -1,4 +1,4 @@
-import { Panel, PanelContent, PanelHeader, PanelTitle } from "@/components/panel";
+import { Panel, PanelContent, PanelHeader, PanelTitle } from "@/components/ui/panel";
 import AnimatedBlurTestimonials, { TestimonialInterface } from "@/components/ui/animated-blur-testimonials";
 
 const DATA: TestimonialInterface[] = [

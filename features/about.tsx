@@ -3,8 +3,8 @@ import {
   PanelContent,
   PanelHeader,
   PanelTitle,
-} from "@/components/panel";
-import { Highlighter } from "../components/ui/highlighter";
+} from "@/components/ui/panel";
+import { Highlighter } from "@/components/ui/common/highlighter";
 
 export function About() {
   return (

@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/tooltip";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/common/tooltip";
 
-import { Panel, PanelContent, PanelHeader, PanelTitle } from "../components/panel";
+import { Panel, PanelContent, PanelHeader, PanelTitle } from "@/components/ui/panel";
 import { TECH_STACK_MAP } from "@/lib/config";
 
 

@@ -1,4 +1,4 @@
-import { ThemeToggleButton } from "@/components/ThemeToggleButton";
+import { ThemeToggleButton } from "@/components/ui/ThemeToggleButton";
 import {
   IconBrandGithub,
   IconBrandLinkedin,

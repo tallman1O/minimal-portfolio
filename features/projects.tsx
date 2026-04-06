@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { ArrowUpRight, Github, Globe, ExternalLink, GithubIcon } from "lucide-react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Panel, PanelContent, PanelHeader, PanelTitle } from "@/components/panel";
+import { Button } from "@/components/ui/common/button";
+import { Panel, PanelContent, PanelHeader, PanelTitle } from "@/components/ui/panel";
 import { cn } from "@/lib/utils";
 
 type ProjectsInterface = {
