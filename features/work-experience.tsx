@@ -43,10 +43,12 @@ const DATA: WorkExperienceInterface[] = [
     tech_stack: [
       "React",
       "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
       "JavaScript",
-      "Expo",
+      "Tailwind CSS",
+      "Python",
+      "Django",
+      "Docker",
+      "Gitlab"
     ],
     location: "Pune, Maharashtra",
     workMode: "on-site",

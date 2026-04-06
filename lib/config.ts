@@ -13,8 +13,11 @@ export const TECH_STACK_MAP: Record<string, string> = {
     Bun: "/icons/tech-stack/bun.svg",
     Go: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
     Python: "/icons/tech-stack/python.svg",
+    Django: "/icons/tech-stack/django.svg",
     MongoDB: "/icons/tech-stack/mongodb.svg",
     PostgreSQL: "/icons/tech-stack/postgresql.svg",
+    Docker: "/icons/tech-stack/docker.svg",
+    Gitlab: "/icons/tech-stack/gitlab.svg",
     Figma: "/icons/tech-stack/figma.svg",
     Claude: "/icons/tech-stack/claude.svg"
   };
