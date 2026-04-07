@@ -1,19 +1,24 @@
-import { Panel, PanelContent, PanelHeader, PanelTitle } from "@/components/ui/panel";
-import AnimatedBlurTestimonials, { TestimonialInterface } from "@/components/ui/animated-blur-testimonials";
+import {
+  Panel,
+  PanelContent,
+  PanelHeader,
+  PanelTitle,
+} from "@/components/ui/panel";
+import AnimatedBlurTestimonials, {
+  TestimonialInterface,
+} from "@/components/ui/animated-blur-testimonials";
+import { IconBrandLinkedin } from "@tabler/icons-react";
 
 const DATA: TestimonialInterface[] = [
   {
-    name: "dhruv",
-    avatar: { src: "https://randomuser.me/api/portraits/lego/4.jpg" },
-    message:
-      "Was suspicious of Daddy. Now my boss respects me, my ex is jealous, and strangers nod at me. Thanks, Daddy",
-  },
-
-  {
-    name: "mtt",
-    avatar: { src: "https://randomuser.me/api/portraits/lego/6.jpg" },
-    message:
-      "I joined Daddy thinking it was a parenting advice site. It wasn’t. But somehow, my life improved—more confidence, better decisions, and free high-fives from the universe. Was it magic? Destiny? Daddy's Magic? Vim? Either way, I’m staying",
+    name: "Om Gunjal",
+    designation: "Research Intern @RRC, IIIT-H",
+    social_media_icon: <IconBrandLinkedin className="w-10 h-10 text-blue-500" />,
+    avatar: { src: "/images/testimonials/om-gunjal.jpg", fallback: "https://randomuser.me/api/portraits/lego/6.jpg" },
+    message: `I worked with Mehul during our time at uni, where he built the website for our Robotics team, MIT Tech Team (robocon.in). What stood out to me was his approach and he genuinely cares about the work he does.
+When you're running an organization, you need people you can delegate work to and not worry about it getting done. Mehul is someone you can trust that way.
+He built a clean, interactive website for our team and handled the deployment end-to-end. The codebase was also structured well, making it easy for future batches to understand, update, and build on without much friction.
+Would happily work with him again and definitely recommend him to any team building something meaningful.`,
   },
 ];
 

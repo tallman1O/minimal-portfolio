@@ -36,6 +36,8 @@ const ani: MotionProps = {
 
 export interface TestimonialInterface {
   message: React.ReactNode;
+  designation?: string;
+  social_media_icon?: React.ReactNode;
   avatar: { src?: string; fallback?: string };
   name: string;
 
@@ -55,6 +57,7 @@ function AnimatedBlurTestimonials({
 }: Props) {
   const [count, setCount] = useState(0);
   const [dir, setDir] = useState(1);
+  const currentTestimonial = data[count];
 
   const [ref, bounds] = useMeasure();
 
@@ -97,18 +100,39 @@ function AnimatedBlurTestimonials({
           )}
         >
           
-          <div ref={ref} className="h-fit p-4 gap-2">
+          <div ref={ref} className="h-fit p-4">
             <AnimatePresence mode="popLayout" custom={dir} initial={false}>
-            <h3 className="text-d-fg/60 font-black text-lg">{data[count].name}</h3>
-              <motion.p
+              <motion.div
                 {...ani}
                 custom={dir}
                 key={count}
-                className="text-d-fg/60 font-medium"
+                className="grid gap-2"
                 aria-live="polite"
               >
-                {data[count].message}
-              </motion.p>
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <h3 className="text-d-fg/60 text-lg font-black">
+                      {currentTestimonial.name}
+                    </h3>
+                    {currentTestimonial.designation ? (
+                      <p className="text-d-fg/50 text-sm">
+                        {currentTestimonial.designation}
+                      </p>
+                    ) : null}
+                  </div>
+                  {currentTestimonial.social_media_icon ? (
+                    <span className="text-d-fg/60 inline-flex items-center">
+                      {React.Children.toArray(
+                        currentTestimonial.social_media_icon,
+                      )}
+                    </span>
+                  ) : null}
+                </div>
+
+                <p className="text-d-fg/60 font-medium">
+                  {React.Children.toArray(currentTestimonial.message)}
+                </p>
+              </motion.div>
             </AnimatePresence>
           </div>
         </motion.div>
