@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Panel, PanelContent, PanelHeader, PanelTitle } from "@/components/ui/panel";
 import { cn } from "@/lib/utils";
 import DownChevron from "@/components/icons/down-chevron";
@@ -34,11 +34,7 @@ function WorkingBadge() {
 function WorkExperience() {
   const orderedJobs = [...DATA].reverse();
   const [openId, setOpenId] = useState<string>(orderedJobs[0]?.id ?? "");
-
-  const hapticsRef = useRef<WebHaptics | null>(null);
-  if (!hapticsRef.current) {
-    hapticsRef.current = new WebHaptics({ debug: true });
-  }
+  const [haptics] = useState(() => new WebHaptics({ debug: true }));
 
   return (
     <Panel id="work-experience">
@@ -54,7 +50,7 @@ function WorkExperience() {
                 <button
                   type="button"
                   onClick={() => {
-                    hapticsRef.current?.trigger([
+                    haptics.trigger([
                       { duration: 25 },
                     ], { intensity: 0.7 })  
                     setOpenId((current) => (current === job.id ? "" : job.id))

@@ -39,9 +39,10 @@ export const DATA: WorkExperienceInterface[] = [
     location: "Pune, Maharashtra",
     workMode: "on-site",
     achievements: [
-      "Built responsive, reusable UI components that improved development speed across the product.",
-      "Integrated backend APIs and improved frontend data-fetching reliability.",
-      "Collaborated with design/product to deliver polished UX improvements across key flows.",
+      "As a Full Stack SWE Intern at Kiddenz, I owned end-to-end improvements across the product",
+      "Improved Core Web Vitals and overall performance of kiddenz.com, enhancing user experience across the customer-facing website.",
+      "Optimized backend API response times, reducing average latency from ~6ms to under 1ms.",
+      "Built an internal operations and sales dashboard using AG Grid, driving a 10x increase in lead generation and conversion efficiency.",
     ],
   },
   {
@@ -71,10 +72,11 @@ export const DATA: WorkExperienceInterface[] = [
     workMode: "on-site",
     isCurrent: true,
     achievements: [
-      "Architected and developed core frontend infrastructure for promotional campaign workflows.",
-      "Refactored large parts of the codebase, improving maintainability and delivery velocity.",
-      "Improved backend API integrations with better error handling and data-fetching patterns.",
-      "Raised UX quality with stronger design system consistency and accessibility improvements.",
+      "Owned the customer-facing React application end-to-end, handling all feature requests in a 2-week agile sprint cycle using React, Redux, Redux Thunk, and Material UI.",
+      "Integrated multiple payment gateways including Razorpay, Pine Labs, HDFC, ICICI, and a custom payment method, managing all API orchestration and edge cases.",
+      "Implemented core product features including push notifications, real-time web updates, and fluid UI animations for a seamless client experience.",
+      "Built and optimized an internal portal for sales and operations teams, designing high-performance tables and forms capable of handling large datasets without lag.",
+      "Collaborated with the hardware team to build a web-based IoT control tool using the Canvas API, bridging frontend and embedded systems.",
     ],
   },
 ];
