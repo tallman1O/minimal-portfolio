@@ -10,15 +10,16 @@ const robotoMono = Roboto_Mono({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mehul.codes";
+const shareImagePath = "/images/mehul.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Mehul's Portfolio | Engineer",
+    default: "Mehul's Portfolio | Developer | Engineer",
     template: "%s | Mehul's Portfolio",
   },
   description:
-    "Portfolio of Mehul showcasing engineering projects, product work, and technical experience.",
+    "Portfolio of Mehul showcasing projects, product work, and technical experience.",
   applicationName: "Mehul's Portfolio",
   keywords: [
     "Mehul",
@@ -39,17 +40,31 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/",
-    title: "Mehul's Portfolio | Engineer",
+    title: "Mehul's Portfolio | Developer | Engineer",
     description:
-      "Explore Mehul's engineering portfolio featuring selected projects, work experience, and testimonials.",
+      "Explore Mehul's portfolio featuring selected projects, work experience, and testimonials.",
     siteName: "Mehul's Portfolio",
     locale: "en_US",
+    images: [
+      {
+        url: shareImagePath,
+        width: 1200,
+        height: 630,
+        alt: "Mehul's portfolio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Mehul's Portfolio | Engineer",
     description:
-      "Explore Mehul's engineering portfolio featuring selected projects, work experience, and testimonials.",
+      "Explore Mehul's portfolio featuring selected projects, work experience, and testimonials.",
+    images: [shareImagePath],
+  },
+  icons: {
+    icon: shareImagePath,
+    shortcut: shareImagePath,
+    apple: shareImagePath,
   },
   robots: {
     index: true,
