@@ -33,7 +33,7 @@ function WorkingBadge() {
 
 function WorkExperience() {
   const orderedJobs = [...DATA].reverse();
-  const [openId, setOpenId] = useState<string>(orderedJobs[0]?.id ?? "");
+  const [openId, setOpenId] = useState<string>("");
   const [haptics] = useState(() => new WebHaptics({ debug: true }));
 
   return (
