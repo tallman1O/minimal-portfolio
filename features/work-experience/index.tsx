@@ -9,6 +9,7 @@ import DownChevron from "@/components/icons/down-chevron";
 import { WebHaptics } from "web-haptics";
 import { TECH_STACK_MAP } from "@/lib/config";
 import { DATA, WorkMode } from "./config";
+import { ASSETS_URL } from "@/env";
 
 export function formatDateRange(start: string, end: string) {
   return `${start} – ${end}`;
@@ -66,7 +67,7 @@ function WorkExperience() {
                           )}
                         >
                           <Image
-                            src={`/icons/work/${job.id}.jpg`}
+                            src={`${ASSETS_URL}/icons/work/${job.id}.jpg`}
                             alt={`${job.company_name} icon`}
                             width={32}
                             height={32}

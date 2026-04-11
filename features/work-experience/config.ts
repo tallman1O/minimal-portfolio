@@ -1,7 +1,10 @@
+import { ASSETS_URL } from "@/env";
+
 export type WorkMode = "on-site" | "remote";
 
 type WorkExperienceInterface = {
   id: string;
+  src: string;
   company_name: string;
   role: string;
   role_type?: string;
@@ -19,6 +22,7 @@ type WorkExperienceInterface = {
 export const DATA: WorkExperienceInterface[] = [
   {
     id: "kiddenz",
+    src: `${ASSETS_URL}/icons/work/kiddenz.jpg`,
     company_name: "Kiddenz",
     role: "Software Engineer Intern (Full Stack)",
     role_type: "Internship",
@@ -47,6 +51,7 @@ export const DATA: WorkExperienceInterface[] = [
   },
   {
     id: "repos",
+    src: `${ASSETS_URL}/icons/work/repos.jpg`,
     company_name: "Repos Energy",
     role: "Associate Software Engineer Intern (UI Engineer)",
     role_type: "Internship",

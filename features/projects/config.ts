@@ -1,3 +1,5 @@
+import { ASSETS_URL } from "@/env";
+
 export type ProjectsInterface = {
   id: string;
   src: string;
@@ -16,7 +18,7 @@ export type ProjectsInterface = {
 export const DATA: ProjectsInterface[] = [
   {
     id: "readme-author",
-    src: "/images/projects/readme.png",
+    src: `${ASSETS_URL}/images/projects/readme.png`,
     project_name: "README Author",
     date_range: "March 2026 – Present",
     description:
@@ -38,7 +40,7 @@ export const DATA: ProjectsInterface[] = [
   },
   {
     "id": "the-hood",
-    "src": "/images/projects/thehood.png",
+    "src": `${ASSETS_URL}/images/projects/thehood.png`,
     "project_name": "The Hood",
     "date_range": "Dec 2025",
     "description": "A private, self-destructing chat room application. Create secure rooms that automatically expire after 10 minutes, with real-time messaging and automatic message deletion. Each room supports a maximum of 2 participants, and rooms can also be manually destroyed by the creator.",
@@ -60,7 +62,7 @@ export const DATA: ProjectsInterface[] = [
   },
   {
     "id": "prepmate",
-    "src": "/images/projects/prepmate.png",
+    "src": `${ASSETS_URL}/images/projects/prepmate.png`,
     "project_name": "PrepMate",
     "date_range": "Jan 2025 – Feb 2025",
     "description": "PrepMate is an AI-powered mock interview platform built for the CSI RenAIssance Hackathon. Users enter a job role, description, and years of experience to receive 5 dynamically generated interview questions powered by Gemini AI. Responses are recorded via microphone or webcam, then evaluated with detailed AI feedback, improvement suggestions, model answers, and a 5-star rating. A personal dashboard lets users track past interviews and practice again.",
@@ -86,7 +88,7 @@ export const DATA: ProjectsInterface[] = [
   },
   {
     "id": "d2c",
-    "src": "/images/projects/d2c.png",
+    "src": `${ASSETS_URL}/images/projects/d2c.png`,
     "project_name": "D2C – Design to Code",
     "date_range": "Jun 2025 – Present",
     "description": "D2C is a full-stack AI-powered platform that converts wireframe images into production-ready React code. Users upload a design mockup, choose from multiple AI models (Gemini 2.0 Flash, Llama 4 Maverick, or Deepseek R1), and optionally provide a custom prompt to guide code generation. The resulting code is instantly previewed in an in-browser sandbox, editable in a live code editor, and persisted to a PostgreSQL database — all behind Firebase authentication.",
