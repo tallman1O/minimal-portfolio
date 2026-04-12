@@ -1,36 +1,149 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# minimal-portfolio
 
-## Getting Started
+![Version](https://img.shields.io/badge/version-0.1.0-blue?style=flat-square)
 
-First, run the development server:
+> 
+
+---
+
+## ✨ What is this project?
+
+
+
+---
+
+## 🚀 Available Scripts
+
+✅ `npm run dev`  
+✅ `npm run build`  
+✅ `npm run start`  
+✅ `npm run lint`  
+✅ `npm run test`
+
+---
+
+## 💻 Tech Stack
+
+| Tech | Description |
+|------|-------------|
+| ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white) | Fullstack React framework |
+| ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) | UI library |
+| ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) | TypeScript |
+| ![Vercel AI SDK](https://img.shields.io/badge/Vercel%20AI%20SDK-000000?style=flat-square&logo=vercel&logoColor=white) | AI streaming SDK |
+| ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white) | Utility-first CSS |
+| ![Radix UI](https://img.shields.io/badge/Radix%20UI-161618?style=flat-square&logo=radixui&logoColor=white) | Accessible primitives |
+
+---
+
+## 🏁 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm / pnpm / yarn
+
+### Installation
+
+```bash
+git clone <your-repo-url>
+cd minimal-portfolio
+npm install
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```text
+.
+├── .agents/
+│   └── skills/
+│       └── vercel-react-best-practices/
+├── app/
+│   ├── (app)/
+│   │   ├── (root)/
+│   │   └── work/
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── icons/
+│   │   ├── down-chevron.tsx
+│   │   └── types.ts
+│   └── ui/
+│       ├── animated-blur-testimonials/
+│       ├── common/
+│       ├── apple-hello-effect.tsx
+│       ├── dither-shader.tsx
+│       ├── panel.tsx
+│       ├── scroll-to-top.tsx
+│       ├── separator.tsx
+│       ├── theme-provider.tsx
+│       └── ThemeToggleButton.tsx
+├── data/
+│   └── user.ts
+├── features/
+│   ├── projects/
+│   │   ├── config.ts
+│   │   └── index.tsx
+│   ├── work-experience/
+│   │   ├── __tests__/
+│   │   ├── config.ts
+│   │   └── index.tsx
+│   ├── about.tsx
+│   ├── banner.tsx
+│   ├── github-graph.tsx
+│   ├── profile-header.tsx
+│   ├── tech-stack.tsx
+│   └── testimonials.tsx
+├── hooks/
+├── lib/
+│   ├── config.ts
+│   ├── data.tsx
+│   └── utils.ts
+├── providers/
+│   └── provider.tsx
+├── types/
+└── ...
+└── ...
+└── ...
+└── ...
+└── ...
+└── ...
+└── ...
+└── ...
+└── ...
+└── ...
+└── ...
+└── ...
+└── ...
+└── ...
+└── ...
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## ⚙️ Configuration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Version:** `0.1.0`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🤝 Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are welcome! Please open an issue first to discuss any major changes.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
