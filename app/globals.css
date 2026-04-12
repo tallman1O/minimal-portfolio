@@ -88,6 +88,12 @@
   --d-sheet: hsl(0 0% 98%);
   --edge: color-mix(in oklab, var(--border) 64%, var(--background));
   --color-edge: var(--edge);
+  /* Slightly above the old ~56% edge tint: a hair more visible, still quiet */
+  --separator-pattern: color-mix(
+    in oklab,
+    color-mix(in oklab, var(--edge) 88%, var(--muted-foreground) 12%) 60%,
+    transparent
+  );
 }
 
 .dark {
@@ -127,6 +133,12 @@
   --d-fg: hsl(0 0% 100%);
   --d-border: hsl(0 0% 20%);
   --d-sheet: hsl(0 0% 12%);
+  /* --edge is very faint on dark bg; base the hatch on muted + background instead */
+  --separator-pattern: color-mix(
+    in oklab,
+    color-mix(in oklab, var(--muted-foreground) 30%, var(--background) 70%) 58%,
+    transparent
+  );
 }
 
 @utility screen-line-before {

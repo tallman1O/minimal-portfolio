@@ -35,12 +35,11 @@ function ProjectCard({ project }: { project: ProjectsInterface }) {
   return (
     <article
       className={cn(
-        "flex flex-col overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950",
-        "shadow-sm dark:border-zinc-800 dark:bg-zinc-950",
+        "flex flex-col overflow-hidden rounded-xl border border-border bg-card text-card-foreground shadow-sm",
       )}
     >
-      {/* Preview — light area */}
-      <div className="relative aspect-16/10 bg-white">
+      {/* Preview — neutral frame for screenshots */}
+      <div className="relative aspect-16/10 bg-muted">
         <Image
           src={project.src}
           alt={`${project.project_name} preview`}
@@ -55,7 +54,7 @@ function ProjectCard({ project }: { project: ProjectsInterface }) {
               href={project.live_link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full bg-black px-3 py-1.5 text-xs font-medium text-white transition-opacity hover:opacity-90"
+              className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-3 py-1.5 text-xs font-medium text-background shadow-sm transition-opacity hover:opacity-90"
             >
               <Globe className="size-3.5 shrink-0" aria-hidden />
               Website
@@ -66,7 +65,7 @@ function ProjectCard({ project }: { project: ProjectsInterface }) {
               href={project.github_link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full bg-black px-3 py-1.5 text-xs font-medium text-white transition-opacity hover:opacity-90"
+              className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-3 py-1.5 text-xs font-medium text-background shadow-sm transition-opacity hover:opacity-90"
             >
               <Github className="size-3.5 shrink-0" aria-hidden />
               Source
@@ -81,10 +80,9 @@ function ProjectCard({ project }: { project: ProjectsInterface }) {
         ) : null}
       </div>
 
-      {/* Content — dark block */}
-      <div className="flex flex-1 flex-col gap-3 border-t border-zinc-800 bg-zinc-950 p-5 dark:bg-zinc-950">
+      <div className="flex flex-1 flex-col gap-3 border-t border-border bg-card p-5">
         <div className="flex items-start justify-between gap-3">
-          <h3 className="text-lg font-semibold tracking-tight text-white">
+          <h3 className="text-lg font-semibold tracking-tight text-foreground">
             {project.project_name}
           </h3>
           {(project.live_link ?? project.github_link) ? (
@@ -92,14 +90,14 @@ function ProjectCard({ project }: { project: ProjectsInterface }) {
               href={project.live_link ?? project.github_link}
               target="_blank"
               rel="noopener noreferrer"
-              className="shrink-0 text-zinc-400 transition-colors hover:text-white"
+              className="shrink-0 text-muted-foreground transition-colors hover:text-foreground"
               aria-label={`Open ${project.project_name}`}
             >
               <ArrowUpRight className="size-5" />
             </a>
           ) : null}
         </div>
-        <p className="text-xs text-zinc-500">{project.date_range}</p>
+        <p className="text-xs text-muted-foreground">{project.date_range}</p>
         <DescriptionWithUnderline
           text={project.description}
           underline={project.descriptionUnderline}
@@ -110,7 +108,7 @@ function ProjectCard({ project }: { project: ProjectsInterface }) {
               <span
                 className={cn(
                   "inline-block rounded-full border-2 border-dashed border-edge bg-muted/30 px-2.5 py-1",
-                  "text-xs font-medium text-zinc-100",
+                  "text-xs font-medium text-foreground",
                 )}
               >
                 {tag}
