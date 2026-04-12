@@ -6,7 +6,7 @@ import {
   IconFileCv,
   IconHome,
 } from "@tabler/icons-react";
-import { LINKEDIN_URL, GITHUB_URL, X_URL } from "@/env";
+import { LINKEDIN_URL, GITHUB_URL, X_URL } from "@/lib/url";
 
 export const NavbarLinks = [
   {

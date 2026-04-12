@@ -1,5 +1,5 @@
-import { ASSETS_URL } from "@/env";
-import type { User } from "@/types/user"
+import { ASSETS_URL } from "@/lib/url";
+import type { User } from "@/types/user";
 
 export const USER = {
   firstName: "Mehul",
@@ -16,13 +16,6 @@ export const USER = {
   jobTitle: "UI Engineer",
   avatar: `${ASSETS_URL}/images/mehul.png`,
   timeZone: "Asia/Mumbai",
-  keywords: [
-    "mehul uttam",
-    "tallman1O",
-    "mehul",
-    "uttam",
-    "tallman",
-    "1O",
-  ],
+  keywords: ["mehul uttam", "tallman1O", "mehul", "uttam", "tallman", "1O"],
   dateCreated: "2026-02-19", // YYYY-MM-DD
-} satisfies User
+} satisfies User;

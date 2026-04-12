@@ -9,7 +9,7 @@ import DownChevron from "@/components/icons/down-chevron";
 import { WebHaptics } from "web-haptics";
 import { TECH_STACK_MAP } from "@/lib/config";
 import { DATA, WorkMode } from "./config";
-import { ASSETS_URL } from "@/env";
+import { ASSETS_URL } from "@/lib/url";
 
 export function formatDateRange(start: string, end: string) {
   return `${start} – ${end}`;

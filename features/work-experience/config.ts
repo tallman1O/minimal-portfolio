@@ -1,4 +1,4 @@
-import { ASSETS_URL } from "@/env";
+import { ASSETS_URL } from "@/lib/url";
 
 export type WorkMode = "on-site" | "remote";
 
@@ -38,7 +38,7 @@ export const DATA: WorkExperienceInterface[] = [
       "Python",
       "Django",
       "Docker",
-      "Gitlab"
+      "Gitlab",
     ],
     location: "Pune, Maharashtra",
     workMode: "remote",
@@ -71,7 +71,7 @@ export const DATA: WorkExperienceInterface[] = [
       "Tanstack",
       "Zustand",
       "Figma",
-      "Jira"
+      "Jira",
     ],
     location: "Pune, Maharashtra",
     workMode: "on-site",

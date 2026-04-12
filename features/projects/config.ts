@@ -1,4 +1,4 @@
-import { ASSETS_URL } from "@/env";
+import { ASSETS_URL } from "@/lib/url";
 
 export type ProjectsInterface = {
   id: string;

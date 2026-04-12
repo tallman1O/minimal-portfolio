@@ -1,4 +1,4 @@
-import { ASSETS_URL } from "@/env";
+import { ASSETS_URL } from "@/lib/url";
 
 export const TECH_STACK_MAP: Record<string, string> = {
     JavaScript: `${ASSETS_URL}/icons/tech-stack/javascript.svg`,
