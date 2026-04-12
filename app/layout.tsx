@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import Provider from "@/providers/provider";
+import { Analytics } from "@vercel/analytics/next";
 
 const robotoMono = Roboto_Mono({
   variable: "--font-roboto-mono",
@@ -92,6 +93,7 @@ export default function RootLayout({
         <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
           <Provider>{children}</Provider>
         </div>
+        <Analytics />
       </body>
     </html>
   );
