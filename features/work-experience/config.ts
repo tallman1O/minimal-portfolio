@@ -41,7 +41,7 @@ export const DATA: WorkExperienceInterface[] = [
       "Gitlab"
     ],
     location: "Pune, Maharashtra",
-    workMode: "on-site",
+    workMode: "remote",
     achievements: [
       "As a Full Stack SWE Intern at Kiddenz, I owned end-to-end improvements across the product",
       "Improved Core Web Vitals and overall performance of kiddenz.com, enhancing user experience across the customer-facing website.",
