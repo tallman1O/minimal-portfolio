@@ -3,7 +3,7 @@ import {
   IconBrandGithub,
   IconBrandLinkedin,
   IconBrandX,
-  IconFileCv,
+  // IconFileCv,
   IconHome,
 } from "@tabler/icons-react";
 import { LINKEDIN_URL, GITHUB_URL, X_URL } from "@/lib/url";
@@ -37,13 +37,13 @@ export const NavbarLinks = [
     ),
     href: GITHUB_URL,
   },
-  {
-    title: "Resume",
-    icon: (
-      <IconFileCv />
-    ),
-    href: GITHUB_URL,
-  },
+  // {
+  //   title: "Resume",
+  //   icon: (
+  //     <IconFileCv />
+  //   ),
+  //   href: GITHUB_URL,
+  // },
   {
     title: "Change Theme",
     icon: <ThemeToggleButton />,
