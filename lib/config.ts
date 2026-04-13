@@ -10,7 +10,7 @@ export const TECH_STACK_MAP: Record<string, string> = {
     Tanstack: `${ASSETS_URL}/icons/tech-stack/tanstack.svg`,
     Motion: `${ASSETS_URL}/icons/tech-stack/motion.svg`,
     Redux: `${ASSETS_URL}/icons/tech-stack/redux.svg`,
-    Expo: `${ASSETS_URL}/icons/tech-stack/expo.svg`,
+    Expo: `${ASSETS_URL}/icons/tech-stack/expo.png`,
     Node: `${ASSETS_URL}/icons/tech-stack/nodejs.svg`,
     Bun: `${ASSETS_URL}/icons/tech-stack/bun.svg`,
     Go: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
