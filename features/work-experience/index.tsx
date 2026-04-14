@@ -8,14 +8,14 @@ import { cn } from "@/lib/utils";
 import DownChevron from "@/components/icons/down-chevron";
 import { WebHaptics } from "web-haptics";
 import { TECH_STACK_MAP } from "@/lib/config";
-import { DATA, WorkMode } from "./config";
+import { USER } from "@/data/user";
 import { ASSETS_URL } from "@/lib/url";
 
 export function formatDateRange(start: string, end: string) {
   return `${start} – ${end}`;
 }
 
-function formatLocationLine(location: string, mode: WorkMode) {
+function formatLocationLine(location: string, mode: "on-site" | "remote") {
   const modeLabel = mode === "remote" ? "Remote" : "On-Site";
   return `${location} (${modeLabel})`;
 }
@@ -33,7 +33,7 @@ function WorkingBadge() {
 }
 
 function WorkExperience() {
-  const orderedJobs = [...DATA].reverse();
+  const orderedJobs = [...USER.workExperience].reverse();
   const [openId, setOpenId] = useState<string>("");
   const [haptics] = useState(() => new WebHaptics({ debug: true }));
 

@@ -4,7 +4,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/common/button";
 import { Panel, PanelContent, PanelHeader, PanelTitle } from "@/components/ui/panel";
 import { cn } from "@/lib/utils";
-import { DATA, ProjectsInterface } from "./config";
+import { USER } from "@/data/user";
+import { ProjectsInterface } from "@/types/user";
 
 function DescriptionWithUnderline({
   text,
@@ -130,7 +131,7 @@ function Projects() {
       <PanelContent className="px-0 py-6">
         <>
           <div className="grid gap-6 px-4 md:grid-cols-2">
-            {DATA.map((project) => (
+            {USER.projects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>

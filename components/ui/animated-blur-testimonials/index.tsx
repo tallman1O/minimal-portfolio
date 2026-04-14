@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { IconBrandLinkedin } from "@tabler/icons-react";
 import {
   AnimatePresence,
   motion,
@@ -120,13 +121,9 @@ function AnimatedBlurTestimonials({
                       </p>
                     ) : null}
                   </div>
-                  {currentTestimonial.social_media_icon ? (
                     <span className="text-d-fg/60 inline-flex items-center">
-                      {React.Children.toArray(
-                        currentTestimonial.social_media_icon,
-                      )}
+                      <IconBrandLinkedin className="w-10 h-10 text-blue-500" />
                     </span>
-                  ) : null}
                 </div>
 
                 <p className="text-d-fg/60 font-medium">
@@ -199,6 +196,7 @@ function Avatar({ src, fallback }: AProps) {
   return (
     <div className="ring-d-bg relative flex size-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-white/10 ring-2 backdrop-blur-xl">
       {src ? (
+        //eslint-disable-next-line @next/next/no-img-element
         <img
           src={src}
           draggable={false}
