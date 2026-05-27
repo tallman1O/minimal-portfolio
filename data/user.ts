@@ -151,7 +151,7 @@ export const USER = {
         "Moment.js",
         "Radix UI"
       ],
-      "live_link": "https://prepmate.vercel.app",
+      "live_link": "https://prepmate-ai.vercel.app",
       "github_link": "https://github.com/tallman1O/prepmate",
       "imageAccentLine": true
     },
