@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "assets.mehul.codes",
+        hostname: "pub-6fc30840a6f14032806370d7cf992a6b.r2.dev",
         port: "",
         pathname: "/**",
       },
