@@ -14,7 +14,7 @@ export const TECH_STACK_MAP: Record<string, string> = {
     Expo: `${ASSETS_URL}/icons/tech-stack/expo.png`,
     Node: `${ASSETS_URL}/icons/tech-stack/nodejs.svg`,
     Bun: `${ASSETS_URL}/icons/tech-stack/bun.svg`,
-    Go: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
+    // Go: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
     Python: `${ASSETS_URL}/icons/tech-stack/python.svg`,
     Django: `${ASSETS_URL}/icons/tech-stack/django.svg`,
     MongoDB: `${ASSETS_URL}/icons/tech-stack/mongodb.svg`,
