@@ -9,6 +9,7 @@ export const TECH_STACK_MAP: Record<string, string> = {
     Zustand: `${ASSETS_URL}/icons/tech-stack/zustand.svg`,
     Tanstack: `${ASSETS_URL}/icons/tech-stack/tanstack.svg`,
     Motion: `${ASSETS_URL}/icons/tech-stack/motion.svg`,
+    Storybook: `${ASSETS_URL}/icons/tech-stack/storybook.svg`,
     Redux: `${ASSETS_URL}/icons/tech-stack/redux.svg`,
     Expo: `${ASSETS_URL}/icons/tech-stack/expo.png`,
     Node: `${ASSETS_URL}/icons/tech-stack/nodejs.svg`,
