@@ -52,12 +52,12 @@ export const USER = {
       id: "repos",
       src: `${ASSETS_URL}/icons/work/repos.jpg`,
       company_name: "Repos Energy",
-      role: "Associate Software Engineer Intern (UI Engineer)",
-      role_type: "Internship",
+      role: "Associate Software Engineer (UI Engineer)",
+      role_type: "Full-time",
       start_date: "January 2026",
       end_date: "♾️",
       description:
-        "Associate Software Engineer Intern at Repos Energy — design and development of the Repos Energy website.",
+        "Associate Software Engineer at Repos Energy — design and development of the Repos Energy website.",
       tech_stack: [
         "Next.js",
         "Tailwind CSS",
