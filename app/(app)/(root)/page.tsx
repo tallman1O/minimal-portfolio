@@ -1,5 +1,5 @@
 import { Separator } from "@/components/ui/separator";
-import { About, Banner, GithubGraph, ProfilePicture, TechStack, Testimonials, WorkExperience, Projects } from "@/features/index";
+import { About, Banner, GithubGraph, MonkeytypeGraph, ProfilePicture, TechStack, Testimonials, WorkExperience, Projects } from "@/features/index";
 
 
 const Home = () => {
@@ -15,6 +15,8 @@ const Home = () => {
       <WorkExperience />
       <Separator />
       <GithubGraph />
+      <Separator />
+      <MonkeytypeGraph />
       <Separator />
       <Projects />
       <Separator />

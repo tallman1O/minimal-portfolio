@@ -1,6 +1,7 @@
 export * from "@/features/about";
 export * from "@/features/banner";
 export { default as GithubGraph } from "@/features/github-graph";
+export { default as MonkeytypeGraph } from "@/features/monkeytype-graph";
 export * from "@/features/profile-header";
 export { default as ProfileHeader, default as ProfilePicture } from "@/features/profile-header";
 export * from "@/features/tech-stack";
