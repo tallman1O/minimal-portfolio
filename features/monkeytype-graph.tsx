@@ -88,7 +88,7 @@ const MonkeytypeGraph = () => {
         <div className="flex items-center justify-start gap-3">
           <MonkeytypeProfileLink href={MONKEYTYPE_URL} />
           {personalBests.length > 0 ? (
-            <h3 className="text-sm font-semibold text-foreground">Personal Bests</h3>
+            <h3 className="text-sm font-semibold text-foreground">Monke.</h3>
           ) : null}
         </div>
         {personalBests.length > 0 ? (

@@ -16,8 +16,9 @@ const GithubGraph = () => {
   return (
     <Panel id="github-graph">
       <PanelContent className="space-y-3">
-        <div className="flex justify-start">
+        <div className="flex items-center justify-start gap-3">
           <GithubProfileLink href={GITHUB_URL} />
+          <h3 className="text-sm font-semibold text-foreground">GitHub.</h3>
         </div>
         <GitHubCalendar username={USER.username} year={currentYear} />
       </PanelContent>
