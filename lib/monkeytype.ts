@@ -162,6 +162,7 @@ export async function getMonkeytypeActivity(): Promise<MonkeytypeActivityRespons
   const response = await fetch(MONKEYTYPE_PROFILE_URL, {
     headers: { Accept: "application/json" },
     next: { revalidate: 3600 },
+    signal: AbortSignal.timeout(8000),
   });
 
   if (!response.ok) {

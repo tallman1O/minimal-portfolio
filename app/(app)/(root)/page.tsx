@@ -17,7 +17,6 @@ const Home = () => {
       <GithubGraph />
       <Separator />
       <MonkeytypeGraph />
-      <Separator />
       <Projects />
       <Separator />
       <Testimonials />

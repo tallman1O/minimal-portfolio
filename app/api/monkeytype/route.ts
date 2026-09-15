@@ -10,8 +10,13 @@ export async function GET() {
     });
   } catch {
     return Response.json(
-      { error: "Failed to fetch Monkeytype activity" },
-      { status: 502 },
+      {
+        username: "",
+        activity: [],
+        personalBests: [],
+        totalTests: 0,
+      },
+      { status: 200 },
     );
   }
 }
