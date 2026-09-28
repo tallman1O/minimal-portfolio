@@ -5,7 +5,6 @@ import { About, Banner, GithubGraph, MonkeytypeGraph, ProfilePicture, TechStack,
 const Home = () => {
   return (
     <div className="mb-24">
-      <Banner />
       <ProfilePicture />
       <Separator />
       <About />
@@ -20,6 +19,7 @@ const Home = () => {
       <Projects />
       <Separator />
       <Testimonials />
+      <Banner />
     </div>
   );
 };
