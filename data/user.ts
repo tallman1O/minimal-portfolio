@@ -12,7 +12,7 @@ export const USER = {
   morphingText: ["Software Engineer", "UI Engineer", "Builder"],
   address: "Pune, Maharashtra",
   email: "mehulsavio@gmail.com", // base64 encoded
-  website: "https://mehul.codes",
+  website: "https://mehuluttam.vercel.app",
   jobTitle: "UI Engineer",
   avatar: `${ASSETS_URL}/images/mehul.png`,
   timeZone: "Asia/Mumbai",
