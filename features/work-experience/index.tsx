@@ -58,8 +58,8 @@ function WorkExperience() {
                   }}
                   className="w-full text-left"
                 >
-                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
-                    <div className="min-w-0 flex-1 space-y-1">
+                  <div className="flex flex-col gap-3">
+                    <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
                       <div className="flex flex-wrap items-center gap-2">
                         <div
                           className={cn(
@@ -87,16 +87,32 @@ function WorkExperience() {
                           <DownChevron className="size-5 text-muted-foreground" />
                         </motion.span>
                       </div>
-                      <p className="text-sm text-muted-foreground">{job.role}</p>
-                    </div>
-                    <div className="shrink-0 space-y-1 text-left sm:text-right">
-                      <p className="text-sm text-muted-foreground">
-                        {formatDateRange(job.start_date, job.end_date)}
-                      </p>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="shrink-0 text-sm text-muted-foreground sm:text-right">
                         {formatLocationLine(job.location, job.workMode)}
                       </p>
                     </div>
+
+                    <ul className="space-y-2">
+                      {job.positions.map((position) => (
+                        <li
+                          key={`${job.id}-${position.title}-${position.start_date}`}
+                          className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
+                        >
+                          <p className="min-w-0 text-sm text-muted-foreground">
+                            {position.title}
+                            {position.role_type ? (
+                              <span className="text-muted-foreground/70">
+                                {" "}
+                                · {position.role_type}
+                              </span>
+                            ) : null}
+                          </p>
+                          <p className="shrink-0 text-sm text-muted-foreground sm:text-right">
+                            {formatDateRange(position.start_date, position.end_date)}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </button>
 

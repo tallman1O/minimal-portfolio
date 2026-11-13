@@ -1,18 +1,25 @@
 import { TestimonialInterface } from "@/components/ui/animated-blur-testimonials";
 
+export type WorkPosition = {
+  title: string;
+  role_type?: string;
+  start_date: string;
+  end_date: string;
+  /** Marks this level as the active role */
+  isCurrent?: boolean;
+};
+
 type WorkExperienceInterface = {
   id: string;
   src: string;
   company_name: string;
-  role: string;
-  role_type?: string;
-  start_date: string;
-  end_date: string;
+  /** Role levels at this company, newest first */
+  positions: WorkPosition[];
   description?: string;
   tech_stack?: string[];
   location: string;
   workMode: "on-site" | "remote";
-  /** Shows “Working” badge (e.g. current role) */
+  /** Shows “Working” badge (e.g. current company) */
   isCurrent?: boolean;
   achievements: string[];
 };
