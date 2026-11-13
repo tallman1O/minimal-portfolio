@@ -3,6 +3,8 @@ import { Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import Provider from "@/providers/provider";
 import { Analytics } from "@vercel/analytics/next";
+import { USER } from "@/data/user";
+import { GITHUB_URL, LINKEDIN_URL, X_URL } from "@/lib/url";
 
 const robotoMono = Roboto_Mono({
   variable: "--font-roboto-mono",
@@ -10,8 +12,50 @@ const robotoMono = Roboto_Mono({
   weight: ["400", "500", "700"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mehul.codes";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? USER.website;
 const shareImagePath = "/images/mehul.png";
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: `${USER.displayName}'s Portfolio`,
+      description: USER.bio.trim(),
+      publisher: { "@id": `${siteUrl}/#person` },
+      inLanguage: "en-US",
+    },
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      name: USER.displayName,
+      givenName: USER.firstName,
+      familyName: USER.lastName,
+      alternateName: [USER.username, ...USER.keywords],
+      url: siteUrl,
+      image: USER.avatar,
+      email: USER.email,
+      jobTitle: USER.jobTitle,
+      description: USER.bio.trim(),
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Pune",
+        addressRegion: "Maharashtra",
+        addressCountry: "IN",
+      },
+      sameAs: [GITHUB_URL, LINKEDIN_URL, X_URL],
+      knowsAbout: [
+        "UI Engineering",
+        "Frontend Development",
+        "Next.js",
+        "TypeScript",
+        "React",
+      ],
+    },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -32,11 +76,17 @@ export const metadata: Metadata = {
     "React",
     "Web Development",
   ],
-  authors: [{ name: "Mehul" }],
+  authors: [{ name: "Mehul", url: siteUrl }],
   creator: "Mehul",
   publisher: "Mehul",
   alternates: {
     canonical: "/",
+    types: {
+      "text/plain": [
+        { url: "/llms.txt", title: "llms.txt" },
+        { url: "/llms-full.txt", title: "llms-full.txt" },
+      ],
+    },
   },
   openGraph: {
     type: "website",
@@ -87,6 +137,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+      </head>
       <body
         className={`${robotoMono.variable} antialiased`}
       >

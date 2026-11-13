@@ -1,5 +1,5 @@
 import { Separator } from "@/components/ui/separator";
-import { About, Banner, GithubGraph, MonkeytypeGraph, ProfilePicture, TechStack, Testimonials, WorkExperience, Projects } from "@/features/index";
+import { About, AskAi, Banner, GithubGraph, MonkeytypeGraph, ProfilePicture, TechStack, Testimonials, WorkExperience, Projects } from "@/features/index";
 
 
 const Home = () => {
@@ -20,6 +20,8 @@ const Home = () => {
       <Projects />
       <Separator />
       <Testimonials />
+      <Separator />
+      <AskAi />
     </div>
   );
 };
