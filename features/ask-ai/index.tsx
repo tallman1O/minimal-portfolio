@@ -11,26 +11,18 @@ import {
 } from "@/components/ui/common/tooltip";
 import { ASK_AI_PROVIDERS, buildAskAiPrompt } from "@/lib/ask-ai";
 import { cn } from "@/lib/utils";
-import { SiClaude, SiGooglegemini, SiOpenai } from "react-icons/si";
-
-function GrokIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden
-      className={className}
-    >
-      <path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 2.5A7.5 7.5 0 0 0 4.5 12c0 1.82.65 3.49 1.73 4.79L12 10.02l5.77 6.77A7.47 7.47 0 0 0 19.5 12 7.5 7.5 0 0 0 12 4.5zm0 7.98 4.52 5.3A7.47 7.47 0 0 1 12 19.5a7.47 7.47 0 0 1-4.52-1.72L12 12.48z" />
-    </svg>
-  );
-}
+import {
+  ChatGptIcon,
+  ClaudeIcon,
+  GeminiIcon,
+  GrokIcon,
+} from "@/features/ask-ai/icons";
 
 const ICONS = {
-  chatgpt: SiOpenai,
-  claude: SiClaude,
+  chatgpt: ChatGptIcon,
+  claude: ClaudeIcon,
   grok: GrokIcon,
-  gemini: SiGooglegemini,
+  gemini: GeminiIcon,
 } as const;
 
 function AskAi() {
@@ -60,10 +52,10 @@ function AskAi() {
                         rel="noopener noreferrer"
                         aria-label={`Ask ${provider.name} about me`}
                         className={cn(
-                          "inline-flex size-11 items-center justify-center rounded-xl border border-edge bg-muted/30 text-foreground transition-colors hover:bg-muted",
+                          "inline-flex size-11 items-center justify-center overflow-hidden rounded-xl transition-opacity hover:opacity-80",
                         )}
                       >
-                        <Icon className="size-6" />
+                        <Icon className="size-11" />
                       </a>
                     }
                   />
