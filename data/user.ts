@@ -20,35 +20,6 @@ export const USER = {
   dateCreated: "2026-02-19", // YYYY-MM-DD
   workExperience: [
     {
-      id: "kiddenz",
-      src: `${ASSETS_URL}/icons/work/kiddenz.jpg`,
-      company_name: "Kiddenz",
-      role: "Software Engineer Intern (Full Stack)",
-      role_type: "Internship",
-      start_date: "July 2025",
-      end_date: "December 2025",
-      description:
-        "UI Engineer at Kiddenz — design and development of the Kiddenz website.",
-      tech_stack: [
-        "React",
-        "Next.js",
-        "JavaScript",
-        "Tailwind CSS",
-        "Python",
-        "Django",
-        "Docker",
-        "Gitlab",
-      ],
-      location: "Pune, Maharashtra",
-      workMode: "remote",
-      achievements: [
-        "As a Full Stack SWE Intern at Kiddenz, I owned end-to-end improvements across the product",
-        "Improved Core Web Vitals and overall performance of kiddenz.com, enhancing user experience across the customer-facing website.",
-        "Optimized backend API response times, reducing average latency from ~6ms to under 1ms.",
-        "Built an internal operations and sales dashboard using AG Grid, driving a 10x increase in lead generation and conversion efficiency.",
-      ],
-    },
-    {
       id: "repos",
       src: `${ASSETS_URL}/icons/work/repos.jpg`,
       company_name: "Repos Energy",
