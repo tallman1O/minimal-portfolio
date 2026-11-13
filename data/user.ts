@@ -51,6 +51,7 @@ export const USER = {
         "Expo",
         "Tanstack",
         "Zustand",
+        "Django",
         "Figma",
         "Jira",
       ],
