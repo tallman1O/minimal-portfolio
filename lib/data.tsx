@@ -1,9 +1,9 @@
+import { ResumeButton } from "@/components/ui/resume-button";
 import { ThemeToggleButton } from "@/components/ui/ThemeToggleButton";
 import {
   IconBrandGithub,
   IconBrandLinkedin,
   IconBrandX,
-  // IconFileCv,
   IconHome,
 } from "@tabler/icons-react";
 import { LINKEDIN_URL, GITHUB_URL, X_URL } from "@/lib/url";
@@ -37,13 +37,10 @@ export const NavbarLinks = [
     ),
     href: GITHUB_URL,
   },
-  // {
-  //   title: "Resume",
-  //   icon: (
-  //     <IconFileCv />
-  //   ),
-  //   href: GITHUB_URL,
-  // },
+  {
+    title: "CV",
+    icon: <ResumeButton />,
+  },
   {
     title: "Change Theme",
     icon: <ThemeToggleButton />,
