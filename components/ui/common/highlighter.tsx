@@ -1,10 +1,14 @@
 "use client"
 
-import { useLayoutEffect, useRef } from "react"
+import { useEffect, useLayoutEffect, useRef, useState } from "react"
 import type React from "react"
 import { useInView } from "motion/react"
 import { annotate } from "rough-notation"
 import { type RoughAnnotation } from "rough-notation/lib/model"
+import { useContentReady } from "@/providers/content-ready"
+
+// Matches content fade-in after Apple Hello splash (app/page.tsx)
+const CONTENT_FADE_MS = 450
 
 type AnnotationAction =
   | "highlight"
@@ -39,14 +43,25 @@ export function Highlighter({
   isView = false,
 }: HighlighterProps) {
   const elementRef = useRef<HTMLSpanElement>(null)
+  const contentReady = useContentReady()
+  const [splashDone, setSplashDone] = useState(false)
+
+  useEffect(() => {
+    if (!contentReady) {
+      setSplashDone(false)
+      return
+    }
+    const id = window.setTimeout(() => setSplashDone(true), CONTENT_FADE_MS)
+    return () => window.clearTimeout(id)
+  }, [contentReady])
 
   const isInView = useInView(elementRef, {
     once: true,
     margin: "-10%",
   })
 
-  // If isView is false, always show. If isView is true, wait for inView
-  const shouldShow = !isView || isInView
+  // Wait for splash + fade; if isView, also wait for inView
+  const shouldShow = splashDone && (!isView || isInView)
 
   useLayoutEffect(() => {
     const element = elementRef.current
